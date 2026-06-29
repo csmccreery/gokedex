@@ -1,12 +1,18 @@
 package main
 
 import (
-	"github.com/csmccreery/gokedex/internal/repl"
 	"github.com/csmccreery/gokedex/internal/pokecommands"
+	"github.com/csmccreery/gokedex/internal/repl"
 )
 
 func main() {
-    pokeRepl := repl.Repl{}
-    pokeRepl.SetCommands(pokecommands.GetPokeCommands())
-    pokeRepl.Start("Pokedex > ")
+	pokeRepl := repl.Repl{
+		Description: "A CLI pokedex!",
+		StopMessage: "Closing the Pokedex... Goodbye!",
+		HelpMessage: "Below are a list of available commands.",
+		History:     map[string]string{},
+		Commands:    pokecommands.GetPokeCommands(),
+	}
+
+	pokeRepl.Start("Pokedex > ")
 }
