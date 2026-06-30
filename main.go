@@ -9,7 +9,7 @@ func main() {
 	pokeRepl := repl.Repl{
 		Description: "A CLI pokedex!",
 		StopMessage: "Closing the Pokedex... Goodbye!",
-		HelpMessage: "Below are a list of available commands.",
+		HelpMessage: "Welcome to the Pokedex!",
 		History:     map[string]string{},
 		Commands:    pokecommands.GetPokeCommands(),
 	}
